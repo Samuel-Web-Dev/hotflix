@@ -12,6 +12,7 @@ FEATURES:
 
 
 TECHNOLOGIES USED.
+
 a).React: Utilized for building a modular and interactive user interface.
 b).React Router: Implemented for smooth navigation between pages.
 c).API Integration: Connected with The Movie Database (TMDb) API for real-time movie data.

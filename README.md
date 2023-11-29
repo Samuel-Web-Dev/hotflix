@@ -11,9 +11,9 @@ FEATURES:
 6. Movie Details: Click on a movie to view detailed information, including cast details.
 
 
-TECHNOLOGIES USED.
 
-a).React: Utilized for building a modular and interactive user interface.
-b).React Router: Implemented for smooth navigation between pages.
-c).API Integration: Connected with The Movie Database (TMDb) API for real-time movie data.
-d).CSS Modules: Styled components to ensure a responsive and visually appealing design.
+TECHNOLOGIES USED:
+1. React: Utilized for building a modular and interactive user interface.
+2. React Router: Implemented for smooth navigation between pages.
+3. API Integration: Connected with The Movie Database (TMDb) API for real-time movie data.
+4. CSS Modules: Styled components to ensure a responsive and visually appealing design.

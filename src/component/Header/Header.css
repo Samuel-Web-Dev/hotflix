@@ -1,0 +1,91 @@
+:root {
+  --textColor: #fff;
+}
+.header {
+  height: 80px;
+  padding: 0 1em;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(30, 102, 226);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2em;
+}
+
+.header.sticky {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  /* width: 100%; */
+  z-index: 3;
+}
+
+.header__hamburgerMenu {
+  cursor: pointer;
+  color: var(--textColor);
+  font-size: 2rem;
+  visibility: hidden;
+}
+
+.header .user_link{
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+
+.header .User_login {
+  color: var(--textColor);
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+.header__inputField {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.header__inputField input{
+  background: none;
+  border: none;
+  width: 100%;
+  outline: none;
+  padding: 0 10px 5px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.header__inputField input::placeholder{
+  color: #fff;
+  font-size: .9rem;
+}
+
+.header__icon-search {
+  color: #aaa;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    width: 100%;
+  }
+
+  .header__hamburgerMenu {
+    visibility: visible;
+  }
+
+  .User_login span {
+    display: none;
+  }
+
+ .header__inputField {
+  border-bottom: none;
+}
+
+.header__icon-search {
+  display: none;
+}
+}

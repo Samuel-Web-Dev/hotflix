@@ -129,7 +129,6 @@ const MovieDetail = () => {
   }
 
   if (!movieDetails || !topCast || !likeMore) {
-    document.body.style.overflow = 'hidden'
     return <div className="loading"><img src={loader} /></div>;
   }
 

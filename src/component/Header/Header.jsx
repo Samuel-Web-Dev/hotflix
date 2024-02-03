@@ -9,20 +9,20 @@ import { Link } from 'react-router-dom';
 const Header = ({ onSearch, handleInput, toggleMenu }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const handleScroll = () => {
-    const scrollY = window.pageYOffset;
-    // Adjust the scroll threshold as needed
-    setIsScrolled(scrollY > 50);
-  };
+  // const handleScroll = () => {
+  //   const scrollY = window.pageYOffset;
+  //   // Adjust the scroll threshold as needed
+  //   setIsScrolled(scrollY > 50);
+  // };
 
-  // Add a scroll listener
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+  // // Add a scroll listener
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
@@ -33,7 +33,7 @@ const Header = ({ onSearch, handleInput, toggleMenu }) => {
 
   // Failed to fetch
   return (
-    <div className={`header ${isScrolled ? 'sticky' : ''}`}>
+    <div className={`header`}>
       <FiMenu className="header__hamburgerMenu" onClick={toggleMenu} />
       <div className="header__inputField">
         <IoIosSearch className="header__icon-search" />
@@ -45,7 +45,7 @@ const Header = ({ onSearch, handleInput, toggleMenu }) => {
         />
       </div>
 
-      <Link className="user_link">
+      <Link className="user_link" to={'/login'}>
         <div className="User_login">
           <span>Login</span>
           <FaUserCircle />

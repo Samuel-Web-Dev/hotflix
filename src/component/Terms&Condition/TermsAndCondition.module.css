@@ -1,0 +1,17 @@
+.terms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.terms input {
+  cursor: pointer;
+  /* width: 15px;
+  height: 20px;  */
+}
+
+.condition-color a{
+  color: rgb(8, 114, 200);
+}

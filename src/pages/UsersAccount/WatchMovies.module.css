@@ -1,0 +1,278 @@
+.container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(100%);
+  height: 100vh;
+  background: white;
+  width: 25%;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.10), 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  z-index: 20;
+}
+
+.container.active {
+  transform: translateX(0);
+}
+
+.backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.profile div {
+  display: flex;
+  align-items: center;
+  gap: .2em;
+  font-size: 1.5rem;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.profile h3 {
+  padding: .7em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.profile h3:hover {
+  background: #eee;
+}
+
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 2px 10px rgba(0, 0, 0, 0.10);
+}
+
+.profile-name {
+  text-transform: lowercase;
+}
+
+.profile-setting {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  padding: .7em 1em;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.profile-setting:hover {
+  background: #eee;
+}
+
+.settings-icon {
+  font-size: 1.5rem;
+}
+
+@media screen and (width <= 768px){
+   .container {
+    width: 45%;
+   }
+}
+
+/* Upload Movie Overlay */
+
+
+.movieOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay background */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Make sure it's on top of other elements */
+}
+
+.movieOverlay.visible {
+  display: flex;
+}
+
+.modalContent {
+  background: white;
+  /* padding: 20px; */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: min(90%, 80%); /* Adjust the width as needed */
+  height: 90%;
+  max-height: 90%;
+  overflow: auto;
+}
+
+@media screen and (width <= 768px){
+  .modalContent {
+    width: 90%;
+  }
+}
+
+.movieOverlay__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.movieOverlay__header div {
+  display: flex;
+  align-items: center;
+  gap: .6em;
+}
+
+.movieOverlay__header h3 {
+  font-size: 1.5rem;
+}
+
+.upload-movie__input {
+  margin-top: 7em;
+  text-align: center;
+}
+
+.upload-movie__input h4 {
+  font-size: 1.2rem;
+}
+
+.upload-movie__input p {
+  font-size: .9em;
+  margin-block: .2em;
+}
+
+.upload-movie__input div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+ .upload-movie__input span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+span .title,
+span textarea {
+  width: 50%; 
+  margin: 8px 0; 
+  padding: 8px; 
+  box-sizing: border-box; 
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+ span textarea {
+  height: 7em;
+  resize: none;
+}
+
+.title {
+  height: 40px;
+}
+
+@media screen and (width <= 768px){
+
+  span .title,
+  span textarea {
+    width: 80%;
+  } 
+}
+
+
+.upload-movie__input button {
+  background: rgb(4, 100, 202);
+  border: none;
+  padding: 10px 30px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 2px;
+  margin: 1em 0 3em 0;
+}
+
+@media screen and (width <= 768px){
+ .upload-movie__input button {
+  padding: 10px;
+  font-size: .8rem;
+ } 
+}
+
+.rules {
+  text-align: center;
+  font-weight: lighter;
+  font-size: .8rem;
+  margin-bottom: 1em;
+}
+
+.videoPng {
+  width: 20%;
+  height: 20%;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.video {
+  width: 60%;
+  height: 30%;
+  margin-bottom: 1em;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (width <= 768px){
+  .video {
+    width: 80%;
+  }
+}
+
+.errorMsg {
+  color: red;
+  margin-bottom: 10em;
+}
+
+.uploaded-movie {
+  width: 300px;
+  height: 250px;
+}
+
+/* MOVIE LIST */
+
+.movie-list {
+ display: flex;
+ align-items: center;
+ text-align: center;
+ gap: 2rem;
+ flex-wrap: wrap;
+ margin: 2rem;
+}
+
+.movie-uploaded {
+  width: 250px;
+  height: 350px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.movie-uploaded:hover {
+  transform: scale(1.05);
+}

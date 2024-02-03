@@ -205,11 +205,11 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     row-gap: 5em;
     column-gap: 1em;
-    margin: 0 auto;
-    width: 95%;
+    /* margin: 0 auto;
+    width: 90%; */
  }
 
 .recommend {

@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Routes, Route, useNavigate } from "react-router-dom";
+import MovieDetail from "../../component/MovieDetail/MovieDetail";
+import CastDetail from "../../component/CastDetail/CastDetail";
 
 import RatingIcon from "../MovieDetail/RatingIcon";
 
@@ -7,10 +9,7 @@ import "./MainContent.css";
 import { movie, loader } from "../../assets/Images";
 
 
-
-
 const MainContent = ({ movies, count, increment, decrement, searchResults }) => {
- console.log('component re-renders');
 
  useEffect(() => {
    // Apply animation styles on every re-render
@@ -22,14 +21,16 @@ const MainContent = ({ movies, count, increment, decrement, searchResults }) => 
    }
  });
 
+
   const displayMovies = searchResults.length > 0 ? searchResults : movies;
+
 
   return (
     <div className={`mainContent-container ${displayMovies ? "animate" : ""}`}>
       {/* Hero Content */}
       {displayMovies.length > 0 ? (
         <>
-          <Link to={`/movie/${displayMovies[3].id}`}>
+          <Link to={`homepage/movie/${displayMovies[3].id}`}>
             <div className="main-content__hero">
               <div className="overlay"></div>
 
@@ -54,7 +55,7 @@ const MainContent = ({ movies, count, increment, decrement, searchResults }) => 
             {displayMovies.map((movie) => {
               return (
                 <Link
-                  to={`/movie/${movie.id}`}
+                  to={`homepage/movie/${movie.id}`}
                   key={movie.id}
                   className="main-content__movie-link"
                 >
@@ -76,6 +77,7 @@ const MainContent = ({ movies, count, increment, decrement, searchResults }) => 
                 </Link>
               );
             })}
+
           </div>
 
           <div className="buttons">

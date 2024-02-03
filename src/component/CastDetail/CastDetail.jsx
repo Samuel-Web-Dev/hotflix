@@ -69,7 +69,7 @@ const CastDetail = () => {
 
    const renderMovies = () =>{
      return currentMovies.map((movie) =>(
-      <Link to={`/movie/${movie.id}`} className='movies-participated-link' key={movie.id}>
+      <Link to={`/homepage/homepage/movie/${movie.id}`} className='movies-participated-link' key={movie.id}>
       <div className='participated-movie-card' key={movie.id}>
          <p><img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} /></p>
          <h3>{movie.title}</h3>
@@ -127,12 +127,10 @@ const CastDetail = () => {
     formattedDate = new Date(castDetails.birthday).toLocaleDateString('en-US', options)
   }
 
-  if(!castDetails || !moviesByCast){
-    return <div className='loader'>Loading...</div>
-  }
 
   return (
-    <>
+    castDetails && moviesByCast ? (
+       <>
     <div className='cast-detail'>
         <img src={`https://image.tmdb.org/t/p/w500/${castDetails.profile_path}`} alt="profile path" />
         <div className="biography">
@@ -159,7 +157,11 @@ const CastDetail = () => {
          <button onClick={incrementNumber} className='next-btn'>Next</button>
      </div>
     </div>
-   </> 
+   </>
+    ) : (
+       <div>Loading</div>
+    )
+     
   )
 }
 

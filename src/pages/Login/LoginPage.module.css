@@ -1,0 +1,35 @@
+
+
+.login-container {
+  width: 50vw;
+  text-align: center;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.container {
+  background: #eee;
+  border-radius: 15px;
+  padding: 30px 10px;
+}
+
+@media screen and (width <= 768px){
+  
+.login-container {
+  width: 90%;
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 3rem;
+}
+
+.condition-color {
+  color: rgb(8, 114, 200);
+}
+
+}

@@ -15,7 +15,7 @@ const Sidebar = ({ handleCategoryChange, isMenuOpen }) => {
   const handleItemClick = (group) => {
     setActiveItem(group)
     handleCategoryChange(group);
-    navigate('/')
+    navigate('/homepage')
   };
 
   useEffect(() => {

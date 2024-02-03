@@ -1,0 +1,29 @@
+.movie-header {
+  background: rgb(77, 162, 237);
+  width: 100%;
+  height: 80px;
+  /* margin-bottom: 100px; */
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.movie-header input {
+  border-radius: 50%;
+}
+
+.account-setting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.account-setting img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}

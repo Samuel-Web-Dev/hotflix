@@ -22,9 +22,11 @@ import upComing from '../assets/coming.png'
 import war from '../assets/war.png'
 import western from '../assets/western.png'
 import loader from '../assets/Loading_2.gif'
+import videoImg from "../assets/video-play-icon-transparent-17.jpg";
+import cameraImg from '../assets/camera-png-icon-5.jpg'
 
 
 
 export {
-   MyLogo, action, adventure, popular, topRated, upComing, animation, comedy, crime, documentary, drama, family, fantasy, history, horror, music, mystery, romance, scienceFiction, movie, thriller, war, western, loader
+   MyLogo, action, adventure, popular, topRated, upComing, animation, comedy, crime, documentary, drama, family, fantasy, history, horror, music, mystery, romance, scienceFiction, movie, thriller, war, western, loader, videoImg, cameraImg
  }

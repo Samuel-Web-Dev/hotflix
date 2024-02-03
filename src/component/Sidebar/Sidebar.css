@@ -28,7 +28,7 @@
 }
 
 .side-bar img {
-  width: 40px;
+  width: 30px;
 }
 
 .side-bar .logo {
@@ -71,7 +71,8 @@
   background: var(--bgColor);
 }
 
-.categories__listItem span {
+.categories__listItem span, 
+.genres__listItem span {
   font-size: 1rem;
 }
 
@@ -88,5 +89,6 @@
 
 .side-bar.open {
   transform: translateX(0);
+  border-radius: 0 .5em .5em 0;
 }
 }

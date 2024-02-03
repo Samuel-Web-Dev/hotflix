@@ -129,7 +129,7 @@ const MovieDetail = () => {
   }
 
   if (!movieDetails || !topCast || !likeMore) {
-    return <div className="loading"><img src={loader} /></div>;
+    return <div className="loading"><img  src={loader} /></div>;
   }
 
   return (
@@ -176,7 +176,7 @@ const MovieDetail = () => {
             <div className="movie__detail--top-cast">
               {topCast.map((cast) => (
                 <Link
-                  to={`/actors/${cast.id}`}
+                  to={`/homepage/homepage/actors/${cast.id}`}
                   key={cast.id}
                   className="movie__detail-top-cast-link"
                 >
@@ -232,7 +232,7 @@ const MovieDetail = () => {
           <div className="recommendation">
             {likeMore.map((movie) => (
               <Link
-                to={`/movie/${movie.id}`}
+                to={`/homepage/homepage/movie/${movie.id}`}
                 key={movie.id}
                 className="recommend"
                 onClick={() => fetchRecommendedMovieDetails(movie.id)}

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, BrowserRouter as Router } from 'react-router-dom'
 import Sidebar from '../../component/Sidebar/Sidebar';
 import Header from '../../component/Header/Header';
 import MainContent from '../../component/Content/MainContent';
@@ -19,6 +19,7 @@ const Homepage = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+   const [allowScroll, setAllowScroll] = useState(true);
 
 
   useEffect(() => {
@@ -92,58 +93,78 @@ const Homepage = () => {
 
    const handleInput = (e) => {
     setQuery(e.target.value)
+
+    console.log(query);
    }
 
 
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
       setIsOverlayVisible(!isOverlayVisible);
+      // setAllowScroll(!isMenuOpen && !isOverlayVisible);
     };
   
-  return (
-    <div className="homepage">
-      {isOverlayVisible && (
-        <>
-          <div onClick={toggleMenu}>
-            <MdOutlineKeyboardBackspace className="close-btn" />
-          </div>
-          <div className="close-overlay" onClick={toggleMenu}></div>
-        </>
-      )}
-      <Sidebar
-        handleCategoryChange={handleCategoryChange}
-        isMenuOpen={isMenuOpen}
-      />
-      <div className="main__section">
-        <Header
-          onSearch={handleSearch}
-          handleInput={handleInput}
-          toggleMenu={toggleMenu}
-        />
-        {/* Conditionally render MainContent based on dataLoaded */}
-        {/* {dataLoaded && <MainContent movies={filteredItems} count={count} increment={increment} decrement={decrement} />} */}
+    //  useEffect(() => {
+    //    if (allowScroll) {
+    //      // Apply styles to disable scrolling
+    //      document.documentElement.style.overflowY = "hidden";
+    //    } else {
+    //      // Revert styles to enable scrolling
+    //      document.documentElement.style.overflowY = "auto";
+    //    }
 
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              dataLoaded && (
-                <MainContent
-                  movies={movieLists.results}
-                  searchResults={searchResults}
-                  count={count}
-                  increment={increment}
-                  decrement={decrement}
-                />
-              )
-            }
+    //    return () => {
+    //      // Cleanup: Revert styles when the component unmounts
+    //      document.documentElement.style.overflowY = "auto";
+    //    };
+    //  }, [allowScroll]);
+
+   
+  return (
+    <>
+      <div className="homepage">
+        {isOverlayVisible && (
+          <>
+            <div onClick={toggleMenu}>
+              <MdOutlineKeyboardBackspace className="close-btn" />
+            </div>
+            <div className="close-overlay" onClick={toggleMenu}></div>
+          </>
+        )}
+        <Sidebar
+          handleCategoryChange={handleCategoryChange}
+          isMenuOpen={isMenuOpen}
+        />
+        <div className="main__section">
+          <Header
+            onSearch={handleSearch}
+            handleInput={handleInput}
+            toggleMenu={toggleMenu}
           />
-          <Route path="/movie/:id" element={<MovieDetail />} />
-          <Route path="/actors/:id" element={<CastDetail />} />
-        </Routes>
+          {/* Conditionally render MainContent based on dataLoaded */}
+          {/* {dataLoaded && <MainContent movies={filteredItems} count={count} increment={increment} decrement={decrement} />} */}
+
+          <Routes>
+            <Route
+              path="/"
+              element={
+                dataLoaded && (
+                  <MainContent
+                    movies={movieLists.results}
+                    searchResults={searchResults}
+                    count={count}
+                    increment={increment}
+                    decrement={decrement}
+                  />
+                )
+              }
+            />
+            <Route path="homepage/movie/:id" element={<MovieDetail />} />
+            <Route path="homepage/actors/:id" element={<CastDetail />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

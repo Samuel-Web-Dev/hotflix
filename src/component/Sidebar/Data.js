@@ -4,19 +4,19 @@ const categories = [
   {
     icon: `${popular}`,
     title: 'Popular',
-    group: 'popularity.desc',
+    group: 'popular',
     id: 1
   },
   {
     icon: `${topRated}`,
     title: 'Top Rated',
-    group: 'vote_average.desc',
+    group: 'top_rated',
     id: 2
   },
   {
     icon: `${upComing}`,
     title: 'Upcoming',
-    group: 'primary_release_date.asc',
+    group: 'upcoming',
     id: 3
   }
 ];

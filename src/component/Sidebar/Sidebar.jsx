@@ -8,13 +8,13 @@ import { categories, genres } from './Data'
 import './Sidebar.css'
 
 
-const Sidebar = ({ handleCategoryChange, isMenuOpen }) => {
+const Sidebar = ({ handleGenreChange, isMenuOpen, handleFetch }) => {
   const [activeItem, setActiveItem] = useState(categories[0].group);
 
   const navigate = useNavigate()
-  const handleItemClick = (group) => {
-    setActiveItem(group)
-    handleCategoryChange(group);
+  const handleItemClick = (genre) => {
+    setActiveItem(genre)
+    handleGenreChange(genre);
     navigate('/homepage')
   };
 
@@ -38,7 +38,7 @@ const Sidebar = ({ handleCategoryChange, isMenuOpen }) => {
               className={`categories__listItem ${
                 activeItem === category.group ? "active" : ""
               }`}
-              onClick={() => handleItemClick(category.group)}
+              onClick={() => handleFetch(category.group)}
             >
               <img src={category.icon} />
               <span>{category.title}</span>
